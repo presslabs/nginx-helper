@@ -379,7 +379,7 @@ class Nginx_Helper_Admin {
 	public function functional_log_path() {
 
         // write to Docker's stderr
-		$log_path = '/proc/self/fd/2';
+		$log_path = 'php://stderr';
 
 		return apply_filters( 'nginx_log_path', $log_path );
 
