@@ -238,7 +238,7 @@ class Nginx_Helper_Admin {
 	public function nginx_helper_default_settings() {
 
 		return array(
-			'enable_purge'                     => 0,
+			'enable_purge'                     => 1,
 			'cache_method'                     => 'enable_fastcgi',
 			'hide_cache_method'                => 0,
 			'purge_method'                     => 'get_request',
