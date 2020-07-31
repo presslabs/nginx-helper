@@ -245,7 +245,6 @@ class Nginx_Helper_Admin {
 			'enable_map'                       => 0,
 			'enable_log'                       => 0,
 			'log_level'                        => 'INFO',
-			'log_filesize'                     => '5',
 			'enable_stamp'                     => 0,
 			'purge_homepage_on_edit'           => 1,
 			'purge_homepage_on_del'            => 1,
@@ -370,6 +369,21 @@ class Nginx_Helper_Admin {
 		$log_path = WP_CONTENT_DIR . '/uploads/nginx-helper/';
 
 		return apply_filters( 'nginx_asset_path', $log_path );
+
+	}
+
+	/**
+	 * Retrieve the log path.
+	 *
+	 * @since     2.0.0
+	 * @return    string    asset path of the plugin.
+	 */
+	public function functional_log_path() {
+
+        // write to Docker's stderr
+		$log_path = '/proc/self/fd/2';
+
+		return apply_filters( 'nginx_log_path', $log_path );
 
 	}
 
