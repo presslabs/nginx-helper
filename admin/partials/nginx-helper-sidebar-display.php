@@ -26,24 +26,6 @@ $nonced_url = wp_nonce_url( $purge_url, 'nginx_helper-purge_all' );
 		<?php esc_html_e( 'Purge Entire Cache', 'nginx-helper' ); ?>
 	</a>
 </form>
-<div class="postbox" id="support">
-	<h3 class="hndle">
-		<span><?php esc_html_e( 'Need Help?', 'nginx-helper' ); ?></span>
-	</h3>
-	<div class="inside">
-		<p>
-			<?php
-			printf(
-				'%s <a href=\'%s\'>%s</a>.',
-				esc_html__( 'Please use our', 'nginx-helper' ),
-				esc_url( 'http://rtcamp.com/support/forum/wordpress-nginx/' ),
-				esc_html__( 'free support forum', 'nginx-helper' )
-			);
-			?>
-		</p>
-	</div>
-</div>
-
 <div class="postbox" id="social">
 	<h3 class="hndle">
 		<span>
