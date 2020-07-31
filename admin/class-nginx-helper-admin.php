@@ -304,7 +304,6 @@ class Nginx_Helper_Admin {
 
 		if ( $is_redis_enabled ) {
 			$data['redis_enabled_by_constant'] = $is_redis_enabled;
-			$data['enable_purge']              = $is_redis_enabled;
 			$data['cache_method']              = 'enable_redis';
 			$data['redis_hostname']            = RT_WP_NGINX_HELPER_REDIS_HOSTNAME;
 			$data['redis_port']                = RT_WP_NGINX_HELPER_REDIS_PORT;
@@ -320,7 +319,6 @@ class Nginx_Helper_Admin {
 
 		if ( $is_memcached_enabled ) {
 			$data['memcached_enabled_by_constant'] = $is_memcached_enabled;
-			$data['enable_purge']                  = $is_memcached_enabled;
 			$data['cache_method']                  = 'enable_memcached';
 			$data['memcached_hostname']            = RT_WP_NGINX_HELPER_MEMCACHED_HOSTNAME;
 			$data['memcached_port']                = RT_WP_NGINX_HELPER_MEMCACHED_PORT;
