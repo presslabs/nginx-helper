@@ -62,7 +62,7 @@
 
 						if ( jQuery( this ).is( ':checked' ) ) {
 
-							jQuery( '.' + selector ).show();
+							jQuery('.' + selector).not(".hidden").show();
 
 							if ( 'cache_method_redis' === selector ) {
 								jQuery( '.cache_method_fastcgi' ).hide();

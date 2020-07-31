@@ -109,7 +109,7 @@ if ( is_multisite() ) {
 	</div>
 
 	<?php if ( ! ( ! is_network_admin() && is_multisite() ) ) { ?>
-		<div class="postbox enable_purge"<?php echo ( empty( $nginx_helper_settings['enable_purge'] ) ) ? ' style="display: none;"' : ''; ?>>
+		<div class="postbox enable_purge <?php echo ( $nginx_helper_settings['hide_cache_method'] ) ? 'hidden' : ''; ?>"<?php echo ( empty( $nginx_helper_settings['enable_purge'] ) || $nginx_helper_settings['hide_cache_method'] ) ? ' style="display: none;"' : ''; ?>>
 			<h3 class="hndle">
 				<span><?php esc_html_e( 'Caching Method', 'nginx-helper' ); ?></span>
 			</h3>
@@ -151,7 +151,7 @@ if ( is_multisite() ) {
 				</table>
 			</div> <!-- End of .inside -->
 		</div>
-		<div class="enable_purge">
+		<div class="enable_purge <?php echo ( $nginx_helper_settings['hide_cache_method'] ) ? 'hidden' : ''; ?>"<?php echo ( empty( $nginx_helper_settings['enable_purge'] ) || $nginx_helper_settings['hide_cache_method'] ) ? ' style="display: none;"' : ''; ?>>
 			<div class="postbox cache_method_fastcgi"  <?php echo ( ! empty( $nginx_helper_settings['enable_purge'] ) && 'enable_fastcgi' === $nginx_helper_settings['cache_method'] ) ? '' : 'style="display: none;"'; ?> >
 				<h3 class="hndle">
 					<span><?php esc_html_e( 'Purge Method', 'nginx-helper' ); ?></span>

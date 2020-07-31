@@ -240,6 +240,7 @@ class Nginx_Helper_Admin {
 		return array(
 			'enable_purge'                     => 0,
 			'cache_method'                     => 'enable_fastcgi',
+			'hide_cache_method'                => 0,
 			'purge_method'                     => 'get_request',
 			'enable_map'                       => 0,
 			'enable_log'                       => 0,
@@ -326,6 +327,10 @@ class Nginx_Helper_Admin {
 			$data['memcached_port']                = RT_WP_NGINX_HELPER_MEMCACHED_PORT;
 			$data['memcached_prefix']              = RT_WP_NGINX_HELPER_MEMCACHED_PREFIX;
 			$data['memcached_versioned_cache_key'] = RT_WP_NGINX_HELPER_MEMCACHED_VERSIONED_CACHE_KEY;
+		}
+
+		if( $is_memcached_enabled || $is_memcached_enabled ) {
+		    $data['hide_cache_method'] = 1;
 		}
 
 		return $data;
