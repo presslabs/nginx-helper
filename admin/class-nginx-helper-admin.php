@@ -78,23 +78,6 @@ class Nginx_Helper_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version     = $version;
 
-		/**
-		 * Define settings tabs
-		 */
-		$this->settings_tabs = apply_filters(
-			'rt_nginx_helper_settings_tabs',
-			array(
-				'general' => array(
-					'menu_title' => __( 'General', 'nginx-helper' ),
-					'menu_slug'  => 'general',
-				),
-				'support' => array(
-					'menu_title' => __( 'Support', 'nginx-helper' ),
-					'menu_slug'  => 'support',
-				),
-			)
-		);
-
 		$this->options = $this->nginx_helper_settings();
 
 	}
